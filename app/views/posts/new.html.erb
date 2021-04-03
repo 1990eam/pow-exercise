@@ -1,1 +1,25 @@
+<!-- Tweet Modal -->
+<div class="modal fade" id="tweetModal" tabindex="-1" aria-labelledby="tweetModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tweetModalLabel">Send a new Tweet</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+      </div>
+      <div class="modal-body">
 
+        <%= simple_form_for @post, remote: true do |f| %>
+          <div class="form-inputs">
+            <%= f.input :content %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.submit "Submit", class: "btn btn-primary"%>
+          </div>
+        <% end %>
+
+
+      </div>
+    </div>
+  </div>
+</div>
