@@ -27,8 +27,14 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { launchModal } from "../packs/render_modal.js"
+import { fetchCovid } from "../packs/fetch_covid.js"
+import { telegramBot } from "../packs/telegram_bot.js"
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initSelect2();
+  launchModal();
+  fetchCovid();
+  telegramBot();
 });
+
