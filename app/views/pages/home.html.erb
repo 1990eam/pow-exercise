@@ -1,6 +1,6 @@
 <% if current_user.present? %>
 
-  <div class="container">
+  <div class="container" id="tweetsContainer">
     <div class="col-md-10">
 
       <h1>You've currently made <%= current_user.posts.count %> posts:</h1>
@@ -16,10 +16,9 @@
       <% end %>
 
       <!-- Modal button -->
-      <button type="button" id="modalbutton" class="modalbutton btn btn-primary" data-bs-toggle="modal" data-bs-target="#tweetModal">
+      <button type="button" id="modalbutton" onclick="launchModal()" class="modalbutton btn btn-primary" data-bs-toggle="modal" data-bs-target="#tweetModal" >
         New Tweet
       </button>
-
 
     </div>
 
@@ -34,16 +33,16 @@
   <div class="col-md-6">
 
     <h1>Covid Data</h1>
-    <p >Date: <span id="covid-date"></span></p>
-    <p >New Confirmed: <span id="covid-new-confirmed"></span></p>
-    <p >TotalConfirmed: <span id="covid-total-confirmed"></span></p>
-    <p >NewDeaths: <span id="covid-new-deaths"></span></p>
-    <p >TotalDeaths: <span id="covid-total-deaths"></span></p>
-    <p >NewRecovered: <span id="covid-new-recovered"></span></p>
-    <p >TotalRecovered: <span id="covid-total-recovered"></span></p>
-
+    <p >Date: <span id="covid-date">Fetching data..</span></p>
+    <p >New Confirmed: <span id="covid-new-confirmed">Fetching data..</span></p>
+    <p >TotalConfirmed: <span id="covid-total-confirmed">Fetching data..</span></p>
+    <p >NewDeaths: <span id="covid-new-deaths">Fetching data..</span></p>
+    <p >TotalDeaths: <span id="covid-total-deaths">Fetching data..</span></p>
+    <p >NewRecovered: <span id="covid-new-recovered">Fetching data..</span></p>
+    <p >TotalRecovered: <span id="covid-total-recovered">Fetching data..</span></p>
 
   </div>
 
-
 </div>
+
+<%= render "posts/modal" %>
