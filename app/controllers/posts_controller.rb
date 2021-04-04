@@ -9,11 +9,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = @user
-    if @post.save
-      redirect_to root_path
-    else
-      render :new
-    end
+    redirect_to root_path
   end
 
   def destroy
