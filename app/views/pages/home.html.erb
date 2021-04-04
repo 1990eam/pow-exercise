@@ -1,9 +1,10 @@
 <% if current_user.present? %>
 
-  <div class="container" id="tweetsContainer">
-    <div class="col-md-10">
+  <div class="container text-center" id="tweetsContainer">
+    <div class="col-md-12">
 
       <h1>You've currently made <%= current_user.posts.count %> posts:</h1>
+      <i class="fa fa-telegram" aria-hidden="true"></i><span>New posts will be  <strong>crossposted</strong> to <a href="https://t.me/apitestpow">this telegram channel</a></span><br>
 
       <% current_user.posts.each_with_index do |post, index| %>
         <div class="container">
@@ -28,18 +29,18 @@
 <% end %>
 
 <!-- Covid -->
-<div class="container my-3">
+<div class="container my-3 text-center" id="covidContainer">
 
-  <div class="col-md-6">
+  <div class="col-md-12">
 
-    <h1>Covid Data</h1>
-    <p >Date: <span id="covid-date">Fetching data..</span></p>
-    <p >New Confirmed: <span id="covid-new-confirmed">Fetching data..</span></p>
-    <p >TotalConfirmed: <span id="covid-total-confirmed">Fetching data..</span></p>
-    <p >NewDeaths: <span id="covid-new-deaths">Fetching data..</span></p>
-    <p >TotalDeaths: <span id="covid-total-deaths">Fetching data..</span></p>
-    <p >NewRecovered: <span id="covid-new-recovered">Fetching data..</span></p>
-    <p >TotalRecovered: <span id="covid-total-recovered">Fetching data..</span></p>
+    <h1><i class="fa fa-bug" aria-hidden="true"></i>Global Covid Data</h1>
+    <strong><p >Date: </strong><span id="covid-date">Fetching data..</span></p>
+    <strong><p >New cases confirmed: </strong><span id="covid-new-confirmed">Fetching data..</span></p>
+    <strong><p >Total cases confirmed: </strong><span id="covid-total-confirmed">Fetching data..</span></p>
+    <strong><p >New deaths today: </strong><span id="covid-new-deaths">Fetching data..</span></p>
+    <strong><p >Total Deaths: </strong><span id="covid-total-deaths">Fetching data..</span></p>
+    <strong><p >Patients recovered today: </strong><span id="covid-new-recovered">Fetching data..</span></p>
+    <strong><p >Total patients recovered: </strong><span id="covid-total-recovered">Fetching data..</span></p>
 
   </div>
 
